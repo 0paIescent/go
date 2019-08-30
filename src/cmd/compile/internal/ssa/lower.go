@@ -4,8 +4,11 @@
 
 package ssa
 
+import "fmt"
+
 // convert to machine-dependent ops
 func lower(f *Func) {
+	fmt.Printf("%s", f.Name)
 	// repeat rewrites until we find no more rewrites
 	applyRewrite(f, f.Config.lowerBlock, f.Config.lowerValue)
 }
